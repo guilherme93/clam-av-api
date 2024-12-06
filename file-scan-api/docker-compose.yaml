@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  clamav:
+    image: clamav/clamav:1.4
+    platform: linux/amd64
+    environment:
+      CLAMD_CONF_MaxFileSize: 250M
+      CLAMD_CONF_MaxScanSize: 250M
+    restart: always
+    ports:
+      - "3310:3310"
